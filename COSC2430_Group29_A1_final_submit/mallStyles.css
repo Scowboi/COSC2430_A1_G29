@@ -1,0 +1,180 @@
+
+      @media screen and (min-width: 768px) and (max-width: 1023px) {
+        header {
+            width: 100%;
+            float: left;
+          }
+
+  
+          main {
+            width: 100%;
+            float: left;
+          }
+  
+          footer {
+            width: 100%;
+            float: left;
+          }
+      }
+
+      
+      @media screen and (min-width: 1024px) {
+        header {
+          width: 100%;
+          float: left;
+          position: fixed;
+            top: 0;
+ 
+            left: 0;
+            right: 0;
+        }
+
+        main {
+          width: 100%;
+          float: left;
+          padding-top: 100px;
+        }
+
+        footer {
+          width: 100%;
+          float: left;
+        }
+
+
+
+      }
+
+      @media screen and (max-width: 767px) {
+        header {
+            width: 100%;
+            float: left;
+          }
+  
+          main {
+            width: 100%;
+            float: left;
+          }
+  
+          footer {
+            width: 100%;
+            float: left;
+          }
+      }
+
+      header {
+        background-color: orange;
+        height: 100px;
+        top: 0;
+        color: green;
+      }
+      footer {
+        background-color: lightgreen;
+        height: fit-content;
+        clear: both;
+
+      }
+      main {
+        background-color: wheat;
+        height: 90%;
+        
+      }
+
+      #headerLogo{
+        text-align: initial;
+        width: 10%;
+        height: 10%;
+        max-width: 100%;
+        max-height: 100%;
+        float: left;
+        
+        }
+ 
+        #headerNav{
+          float: right;
+          width: 15%;
+          max-width: 100%;
+          box-sizing: content-box;
+          
+        }
+
+        #headerNav2{
+            float: right;
+            width: 15%;
+            max-width: 100%;
+            box-sizing: content-box;
+            
+          }
+ 
+        #headerP {
+         width: calc(100% - 10% - 30%);
+         text-align: center;
+         font-size: 22px;
+         max-width: 100%;
+         float: left;
+        }
+ 
+        #footerDiv {
+          text-align: center;
+        }  
+        .new-stores{
+       margin: auto;
+       padding: 20px 30px;
+       float:left;
+       
+        }
+
+    
+ 
+        .featured-stores{
+       margin: auto;
+       padding: 20px 30px;
+       float:left;
+       
+        }
+ 
+        .new-products{
+       margin: auto;
+       padding: 20px 30px;
+       float:left;
+        }
+ 
+    .featured-products{
+       margin: auto;
+       padding: 20px 30px;
+       float:left;
+    }
+
+    .member-profile{
+        margin: auto;
+        padding: 20px 30px;
+        float:left;
+    }
+
+    #TOS-title{
+        padding: 10px 10px;
+        font-size: 20px;
+    }
+
+    #PP-titles{
+        padding: 10px 10px;
+        font-size: 20px;
+    }
+
+    #copyRight{
+        font-size: 30px;
+        text-align: center;
+    }
+
+    #TOS {
+        line-height: 2;
+        text-indent: 16px;
+    }
+
+    dt{
+      display: list-item;
+      list-style-type: decimal;
+      list-style-position: inside;
+  }
+
+ 
+        #clear:after {content:''; display:block; height:0; clear:both;}
