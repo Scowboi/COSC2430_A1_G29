@@ -7,4 +7,4 @@ Members:
 -Tokunaga Hayato
 -Vu Gia Thinh
 
-Link to Our Github Repo: https://github.com/hyt3571/Webprogramming-assignment-1-
+Link to Our Github Repo: https://github.com/Scowboi/COSC2430_A1_G29
