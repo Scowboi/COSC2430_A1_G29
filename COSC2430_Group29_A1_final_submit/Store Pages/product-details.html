@@ -53,6 +53,21 @@
             </nav>
         </header>
         <br>
+        <script>
+            function adder(){
+               alert("THIS PRODUCT HAS BEEN ADDED TO THE SHOPPING CART!");
+               alert("PLEASE REFRESH THE SHOPPING CART PAGE TO SEE CHANGES")
+               if (typeof(Storage) !== "undefined") {
+                   if (localStorage.quantityNumber) {
+                       localStorage.quantityNumber = Number(localStorage.quantityNumber) + 1;
+                   }
+                   else {
+                       localStorage.quantityNumber = 1;
+                   }
+               }
+               else {}
+            }
+        </script>
         <main>
             <h1>Laptop Asus S330FN-EY037T</h1>
             <!-- Original image below sourced for educational purposes:
@@ -60,7 +75,7 @@
             <img src="images/Laptop Asus.png" width="300" alt="Laptop Asus">
             <p>Price: 20,000,000 VND</p>
             <p>Description:</p>
-            <button value="Add">Add</button>
+            <button value="Add" onclick="adder()">Add</button>
             &emsp;
             <button value="Buy">Buy Now!</button> <!--Link to Order Replacement Page-->
             <br>
