@@ -1,144 +1,184 @@
 <!Doctype html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="mallStyles.css">
-    <title>Browse Store</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="mallStyles.css">
+	<title>Browse Store</title>
+<style>
+.error {
+    border-color: #f33a58;}
+.success {border-color: green}
+</style>
 </head>
 <body>
-    <header>
-        <div id="header">
-          <section id ='headerLogo'>
-            <img src="images/Logo.png" alt ="headrLogo">
-          </section>
-          <nav id="headerNav2">
-            <a href="mallFees.html">Fees</a>
-            &emsp;
-            <br>
-            <a href="contact_form.html">Contact</a>
-            &emsp;
-            <br>
-            <a href="FAQ.html">FAQs</a>
-            &emsp;
-          </nav>
-          <nav id="headerNav">
-            <a href="index.html">Home</a>
-            &emsp;
-            <br>
-            <a href="my_account.html">Myaccount</a>
-            &emsp;
-            <br>
-            <a href="browse.html">Browse</a>
-        </nav>
-          <p id="headerP">
-            Welcome to the mall
-          </p>
-      </div>
-      </header>
-      <main>
-    <h1>Contact Form</h1>
-    <form action="">
-        <table width="640px">
-            <tr>
-                <td class="first-name">
-                    <label for="first_name">First Name</label>
-                    <input type="text" name="first_name" maxlength="30" size="30">
-                </td>
-                <td class="last-name">
-                    <label for="last_name">Last Name</label>
-                    <input type="text" name="last_name" maxlength="30" size="30">
-                </td>
-            </tr>
-            <tr>
-                <td colspan="2" class="phone">
-                    <label for="phone">Phone Number</label><br>
-                    <input type="tel" id="phone" name="phone" pattern="[0-9]{10}">
-                </td>
-            </tr>
-            <tr>
-                <td colspan="2" class="mail">
-                    <label for="email">Email</label> <br>
-                    <input type="email" id="email" size="60">
-                </td>
-            </tr>
-            <tr>
-                <td colspan="2" class="method">
-                    Your preferred contact method <br>
-                    <div>
-                        <input type="radio" id="cont-choice1" name="contact" value="email" checked>
-                        <label for="email">Email</label><br>
+	<header>
+		<div id="header">
+		  <section id ='headerLogo'>
+			<img src="images/Logo.png" alt ="headrLogo">
+		  </section>
+		  <nav id="headerNav2">
+			<a href="mallFees.html">Fees</a>
+			&emsp;
+			<br>
+			<a href="contact_form.html">Contact</a>
+			&emsp;
+			<br>
+			<a href="FAQ.html">FAQs</a>
+			&emsp;
+		  </nav>
+		  <nav id="headerNav">
+			<a href="index.html">Home</a>
+			&emsp;
+			<br>
+			<a href="my_account.html">Myaccount</a>
+			&emsp;
+			<br>
+			<a href="browse.html">Browse</a>
+		</nav>
+		  <p id="headerP">
+			Welcome to the mall
+		  </p>
+	  </div>
+	  </header>
+	  <main>
+	
+	<form class="form" id="contact_form" onsubmit="return validate();">
+		<h1>Contact Form</h1>
+		<div class="emptyblock"></div>
+		<div class="form_group">
+			<label for="name" class="form_label">Name</label>
+			<input type="text" name="name" id="name" class="form_control">
+			<span class="form_message namemess"></span>
+		</div>
 
-                        <input type="radio" id="cont-choice2" name="contact" value="phone">
-                        <label for="phone">phone</label><br>
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="2" class="cont">
-                    Contact days:
-                </td>
-            </tr>
+		<div class="form_group">
+			<label for="email" class="form_label">Email</label>
+			<input type="email" name="email" id="email" placeholder="example@mail.com" class="form_control">
+			<span class="form_message emailmess"></span>
+		</div>
 
-            <tr>
-                <td colspan="2">
-                    <input type="checkbox" id="day1" name="monday" value="monday">
-                    <label for="monday"> Monday</label><br>
+		<div class="form_group">
+			<label for="phone" class="form_label">Phone number</label>
+			<input type="tel" name="phone" id="phone" placeholder="XXX-XXX-XXX(XX)" class="form_control">
+			<span class="form_message phonemess"></span>
+		</div>
 
-                    <input type="checkbox" id="day2" name="tuesday" value="tuesday">
-                    <label for="tuesday"> Tuesday</label><br>
 
-                    <input type="checkbox" id="day3" name="wednesday" value="wednesday">
-                    <label for="wednesday"> Wednesday</label><br>
 
-                    <input type="checkbox" id="day4" name="thursday" value="thursday">
-                    <label for="thursday"> Thursday</label><br>
+					<!--Checkbox for contact days-->
+		<div class="contact_days">
+			<span><h4>Contact days:</h4></span>
+			<div class="contact_days_items">
+				<input type="checkbox" name="checkbox_1" id="monday" value="monday">
+				<label for="monday">Monday</label>
+			</div>
 
-                    <input type="checkbox" id="day5" name="friday" value="friday">
-                    <label for="friday"> Friday</label><br>
+			<div class="contact_days_items">
+				<input type="checkbox" name="checkbox_2" id="tuesday" value="tuesday">
+				<label for="tuesday">Tuesday</label>
+			</div>
 
-                    <input type="checkbox" id="day6" name="saturday" value="saturday">
-                    <label for="saturday"> Saturday</label><br>
+			<div class="contact_days_items">
+				<input type="checkbox" name="checkbox_3" id="wednesday" value="wednesday">
+				<label for="wednesday">Wednesday</label>
+			</div>
 
-                    <input type="checkbox" id="day7" name="sunday" value="sunday">
-                <label for="sunday"> Sunday</label><br>
-                </td>
-            </tr>
+			<div class="contact_days_items">
+				<input type="checkbox" name="checkbox_4" id="thursday" value="thursday">
+				<label for="thursday">Thursday</label>
+			</div>
 
-            <tr>
-                <td colspan="2">
-                    <label for="purpose">Contact Purpose</label>
-                    <select name="purpose" id="purp">
-                        <option label="Purpose 1">Purpose 1</option>
-                        <option label="Purpose 1">Purpose 2</option>
-                        <option label="Purpose 1">Purpose 3</option>
-                        <option label="Purpose 1">Purpose others</option>
-                    </select>
+			<div class="contact_days_items">
+				<input type="checkbox" name="checkbox_5" id="friday" value="friday">
+				<label for="friday">Friday</label>
+			</div>
 
-                </td>
-            </tr>
-            <tr>
-                <td colspan="2">
-                    <label for="detail">Detail Description</label><br>
-                    <textarea name="detail" cols="80" rows="10"></textarea>
-                </td>
-            </tr>
-        </table>
-        
-        <input type="reset" value="Clear Form">
-        <input type="submit" value="Submit">
-    </form>
+			<div class="contact_days_items">
+				<input type="checkbox" name="checkbox_6" id="saturday" value="saturday">
+				<label for="saturday">Saturday</label>
+			</div>
+
+			<div class="contact_days_items">
+				<input type="checkbox" name="checkbox_7" id="sunday" value="sunday">
+				<label for="sunday">Sunday</label>
+			</div>
+			<span class="form_message checkboxmess"></span>
+		</div>
+
+
+
+				<!--radio for method-->
+		<div>
+			<span><h4>Preferred contact method:</h4></span>
+			<div>
+				<input type="radio" name="contmethod" id="emailmethod" checked>
+				<label for="emailmethod"">Email</label>
+			</div>
+			<div>
+				<input type="radio" name="contmethod" id="phonemethod">
+				<label for="phonemethod"">Phone</label>
+			</div>
+		</div>
+
+
+				<!--select for contact purposes-->
+		<div>
+			<label for="purpose">Contact purpose</label>
+			<select name="purpose" id="purpose">
+				<option value="Purpose 1">Purpose 1</option>
+				<option value="Purpose 1">Purpose 1</option>
+				<option value="Purpose 1">Purpose 1</option>
+				<option value="Purpose 1">Purpose 1</option>
+			</select>
+		</div>
+
+				<!--textarea for contact desc-->
+
+		<div class="text_area">
+			<label for="desc">Contact Detail</label>
+			<textarea name="desc" id="desc" class="success" placeholder="Describe your situation"></textarea>
+			<span class="typing_mess"></span>
+		</div>
+
+		<button type="reset" class="reset">Clear form</button>
+		<button type="submit" class="submit">Submit</button>
+	</form>
+
+
+
 </main>
-    <footer>
-        <div id=footerDiv>
-            <nav>
-                <a href="mallCopyright.html">Copyright</a>
-                &emsp;
-                <a href="mallTermsOfService.html">Term of Service</a>
-                &emsp;
-                <a href="mallPrivacyPolicy.html">Privacy Policy</a>
-            </nav>
-        </div>
-    </footer>
+
+
+</script>
+	<footer>
+		<div id=footerDiv>
+			<nav>
+				<a href="mallCopyright.html">Copyright</a>
+				&emsp;
+				<a href="mallTermsOfService.html">Term of Service</a>
+				&emsp;
+				<a href="mallPrivacyPolicy.html">Privacy Policy</a>
+			</nav>
+		</div>
+	</footer>
 </body>
+<script src="contact_script.js"></script>
+<!-- <script>
+
+	// formElement.addEventListener("submit", function(){
+	// 	validate();
+	// 	validator();
+	// })
+	// Validator({
+	// 	form: '#contact_form',
+	// 	formGroupSelector: '.form_group',
+    //     errorSelector: '.form_message',
+	// 	rules: [
+	// 	Validator.checkName('#name'),
+	// 	Validator.checkEmail('#email')
+	// 	]
+
+	// }); 
+</script> -->
 </html>
