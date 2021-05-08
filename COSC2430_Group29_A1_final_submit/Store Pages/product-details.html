@@ -55,25 +55,35 @@
         <br>
         <script>
             function adder(){
+                var product_name = document.getElementsByClassName('product-title')[0].innerText;
+                var priceNum = document.getElementsByClassName('product-price')[0].innerText;
+                var imgSRC = document.getElementsByClassName('product-img')[0].src
                alert("THIS PRODUCT HAS BEEN ADDED TO THE SHOPPING CART!");
                alert("PLEASE REFRESH THE SHOPPING CART PAGE TO SEE CHANGES")
                if (typeof(Storage) !== "undefined") {
+
                    if (localStorage.quantityNumber) {
+                       localStorage.product = product_name;
+                       localStorage.price = priceNum;
                        localStorage.quantityNumber = Number(localStorage.quantityNumber) + 1;
+                       localStorage.image = imgSRC;
                    }
                    else {
+                        localStorage.product = product_name
                        localStorage.quantityNumber = 1;
+                       localStorage.price = priceNum;
+                       localStorage.image = imgSRC;
                    }
                }
                else {}
             }
         </script>
         <main>
-            <h1>Laptop Asus S330FN-EY037T</h1>
+            <h1 class="product-title">Laptop Asus S330FN-EY037T</h1>
             <!-- Original image below sourced for educational purposes:
                 https://dienmaythienhoa.vn/may-tinh-xach-tay-asus-core-i5-s330fn-ey037t-mau-vang-253432.html -->
-            <img src="images/Laptop Asus.png" width="300" alt="Laptop Asus">
-            <p>Price: 20,000,000 VND</p>
+            <img class="product-img" src="images/Laptop Asus.png" width="300" alt="Laptop Asus">
+            <p>Price: <span class="product-price">20,000,000VND</span></p>
             <p>Description:</p>
             <button value="Add" onclick="adder()">Add</button>
             &emsp;
