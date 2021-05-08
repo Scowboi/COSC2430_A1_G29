@@ -1,127 +1,309 @@
-
 /*cart format*/
-a{
-    text-decoration: none;
+a {
+  text-decoration: none;
 }
 
-.order-content{
-    max-width: 1300px;
-    padding-left: 50px;
-    padding-right: 50px;
-    margin: auto;
-    
+.order-content {
+  max-width: 1300px;
+  padding-left: 50px;
+  padding-right: 50px;
+  margin: auto;
 }
 
-.cart-of-each{
-    display: inline-block;
-    flex-wrap: wrap;
+.cart-of-each {
+  display: inline-block;
+  flex-wrap: wrap;
 }
 
-
-
-thead{
-    background-color: cyan;
-
+thead {
+  background-color: cyan;
 }
 
-th{
-    text-align: right;
-    padding: 5px;
+th {
+  text-align: right;
+  padding: 5px;
 }
 
-th:first-child{
-    text-align: left;
-    padding: 5px;
+th:first-child {
+  text-align: left;
+  padding: 5px;
 }
 
-td{
-    text-align: right;
-    padding: 5px;
+td {
+  text-align: right;
+  padding: 5px;
 }
 
-table{
-    width: 100%;
-    border-collapse: collapse;
+table {
+  width: 100%;
+  border-collapse: collapse;
 }
 
-tfoot td:first-child{
-    background-color: burlywood;
+tfoot td:first-child {
+  background-color: burlywood;
 }
 
-
-table input{
-    width: 40px;
-    height: 20px;
-    padding: 5px;
+table input {
+  width: 40px;
+  height: 20px;
+  padding: 5px;
 }
 
-td:nth-child(3n+1){
-text-align: left;
-padding: 5px;
+td:nth-child(3n + 1) {
+  text-align: left;
+  padding: 5px;
 }
 
-.button{
-    display: inline-flex;
-    border: 1px solid orange;
-    padding: 7px 15px;
-    margin: 30px 0;
+.button {
+  display: inline-flex;
+  border: 1px solid orange;
+  padding: 7px 15px;
+  margin: 30px 0;
 }
 
-.cart-btn{
-    text-align: end;
+.cart-btn {
+  text-align: end;
 }
 
 /*footer-header*/
 * {
-    margin: 0;
-  }
-  header {
-    background-color: orange;
-    height: 100px;
-    position: sticky;
-    top: 0;
-    color: green;
-  }
-  footer {
-      min-width: 100%;
-      align-items: center;
-    background-color: skyblue;
-    height: fit-content;
-    clear: both;
-    bottom:0;
-    position: absolute;
-  
-  }
-  main {
-      height: 90vh;
-    background-color: wheat;
-
-    
-  }
-   #headerLogo{
+  margin: 0;
+}
+header {
+  background-color: orange;
+  height: 100px;
+  position: sticky;
+  top: 0;
+  color: green;
+}
+footer {
+  min-width: 100%;
+  align-items: center;
+  background-color: skyblue;
+  height: fit-content;
+  clear: both;
+  bottom: 0;
+  position: absolute;
+}
+main {
+  height: 90vh;
+  background-color: wheat;
+}
+#headerLogo {
   padding-left: 2%;
-   text-align: initial;
-      width: 30%;
-      height: 50px;
-   }
-  
-   #headerLogo img{
-  
-       margin: 15px;
-       max-height: 70px;
-   }
-  
-   #headerNav{
-     float: right;
-     width: 20%;
-   }
-  
-   #headerP {
-    width: calc(100% - 15% - 30%);
-    text-align: center;
-   }
-  
-   #footerDiv {
-     text-align: center;
-   }
-  
+  text-align: initial;
+  width: 30%;
+  height: 50px;
+}
+
+#headerLogo img {
+  margin: 15px;
+  max-height: 70px;
+}
+
+#headerNav {
+  float: right;
+  width: 20%;
+}
+
+#headerP {
+  width: calc(100% - 15% - 30%);
+  text-align: center;
+}
+
+#footerDiv {
+  text-align: center;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: Raleway;
+  color: #777;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+}
+
+.main-header {
+  background-color: rgba(0, 0, 0, 0.6);
+  background-image: url("Images/Header Background.jpg");
+  background-blend-mode: multiply;
+  background-size: cover;
+  padding-bottom: 30px;
+}
+
+.content-group {
+  margin: 1em;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 1.5em;
+}
+.cart-header {
+  margin-bottom: 50px;
+  font-family: "Metal Mania";
+  font-weight: normal;
+  color: #333;
+  text-align: center;
+  font-size: 3em;
+}
+
+.btn {
+  text-align: center;
+  vertical-align: middle;
+  padding: 0.67em 0.67em;
+  cursor: pointer;
+}
+
+.btn-header {
+  margin: 0.5em 15% 2em 15%;
+  color: white;
+  border: 2px solid #2d9cdb;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 0;
+  font-size: 1.5em;
+  font-weight: lighter;
+  padding-left: 2em;
+  padding-right: 2em;
+}
+
+.btn-primary {
+  color: white;
+  background-color: #56ccf2;
+  border: none;
+  border-radius: 0.3em;
+  font-weight: bold;
+}
+
+.cart-header {
+  font-weight: bold;
+  font-size: 1.25em;
+  color: #333;
+}
+
+.cart-column {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid black;
+  margin-right: 1.5em;
+  padding-bottom: 10px;
+  margin-top: 10px;
+}
+
+.cart-row {
+  display: flex;
+}
+
+.cart-item {
+  width: 45%;
+}
+
+.cart-price {
+  width: 20%;
+  font-size: 1.2em;
+  color: #333;
+}
+
+.cart-quantity {
+  width: 35%;
+}
+
+.cart-item-title {
+  color: #333;
+  margin-left: 0.5em;
+  font-size: 1.2em;
+}
+
+.cart-item-image {
+  width: 75px;
+  height: auto;
+  border-radius: 10px;
+}
+
+.btn-danger {
+  color: white;
+  background-color: #eb5757;
+  border: none;
+  border-radius: 0.3em;
+  font-weight: bold;
+}
+
+.cart-quantity-input {
+  height: 34px;
+  width: 50px;
+  border-radius: 5px;
+  border: 1px solid #56ccf2;
+  background-color: #eee;
+  color: #333;
+  padding: 0;
+  text-align: center;
+  font-size: 1.2em;
+  margin-right: 25px;
+}
+
+.cart-row:last-child {
+  border-bottom: 1px solid black;
+}
+
+.cart-row:last-child .cart-column {
+  border: none;
+}
+
+.cart-total,
+.cart-final {
+  text-align: end;
+  margin-top: 10px;
+  margin-right: 120px;
+}
+
+.cart-total-title {
+  font-weight: bold;
+  font-size: 1.5em;
+  color: black;
+  margin-right: 20px;
+}
+
+.cart-total-price,
+.cart-final-price {
+  color: #333;
+  font-size: 1.1em;
+}
+
+.btn-purchase {
+  display: inline-block;
+  margin: 40px auto 80px auto;
+  font-size: 1.05em;
+}
+
+.btn-continue {
+  display: inline-block;
+  margin: 40px auto 80px auto;
+  font-size: 1.05em;
+}
+.cart-coupon {
+  text-align: end;
+}
+
+.cart-coupon input {
+  width: 150px;
+}
+
+.cart-final {
+  text-align: end;
+  margin-top: 30px;
+  margin-right: 10px;
+  padding-right: 120px;
+}
+
+.cart-final-title {
+  font-weight: bold;
+  font-size: 1.5em;
+  color: black;
+  margin-right: 20px;
+}
