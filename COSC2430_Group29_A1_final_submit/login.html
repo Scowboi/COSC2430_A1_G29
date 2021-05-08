@@ -77,7 +77,7 @@
 			color: white;
 		}
 		
-		#input {
+		input[type=text], input[type=password] {
 			width: 250px;
 			height: 20px;
 		}
@@ -257,11 +257,11 @@
 		<form method="post">
 			<div class="form-group">					
 				<label class="control-label" for="input"><p>Username</p></label>
-				<input type="text" id="input" required="required"/>
+				<input type="text" id="username" placeholder="Enter email" required="required"/>
 			</div>
 			<div class="form-group">
 				<label class="control-label" for="input"><p>Password</p></label>
-				<input type="password" id="input" required="required">						
+				<input type="password" id="password" required="required">						
 			</div>
 			<div class="checkbox">
 				<label>
@@ -272,7 +272,7 @@
 			<a href="forgot-pwd.html" title="" class="forgot-pwd">Forgot Password?</a>
 			<!-- Submit and register buttons -->
 			<div class="submit-btns">
-				<button class="signin" type="button"><span>Login</span></button>
+				<button class="signin" id="login" type="button" onclick="logIn(); addUser();"><span>Login</span></button>
 				<!-- Move to register page -->
 				<button class="signup" type="button"><span><a href="register.html" id="signup">Register</a></span></button>
 			</div>
@@ -291,6 +291,21 @@
 		</nav>
 	</div>
 </footer>
+
+<script>
+	function logIn() {
+		var password = document.getElementById("password").value;
+		var username = document.getElementById("username").value;
+		
+		if (password == "password") {
+			window.location.href = "logged.html";
+		} else {
+			alert("Incorrect password!");
+			window.location.reload(true);
+		}
+	}
+	
+</script>
 </body>	
 
 </html>
