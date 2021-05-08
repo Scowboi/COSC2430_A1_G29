@@ -9,9 +9,8 @@
       * {
         margin: 0;
       }
-
+    
     </style>
-
   </head>
   <body>
     <header>
@@ -74,11 +73,31 @@
         <div id="clear">
           <div id=""></div>
       </div>
-      <div id="clear">
-        <div id=""></div>
     </div>
       </section>
+      <button class="openBtn">modal open</button>
+      <div class="container">
+        <div class="modal">
+           <button onclick="CloseModal();"><img src="images/profilePic.png" alt=""></button>
+           <h1>-Infor 1 -</h1>
+           <h2>Infor 2 </h2>
+           <h2>Infor 3</h2>
+           <figure><img src="images/user.png" alt=""></figure>
+        </div>
+  </div>
+  
+  <script>
+        function CloseModal(){
+           var CloseModal = document.querySelector(".container");
+           CloseModal.classList.add("CloseModal");
+        }
+  </script>
     </main>
+
+    
+
+
+
     <footer>
         <div id=footerDiv>
             <nav>

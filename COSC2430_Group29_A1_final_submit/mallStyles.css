@@ -116,39 +116,71 @@
         #footerDiv {
           text-align: center;
         }  
+
+        
+      
+      .member-profile{
+        margin: auto;
+        padding: 20px 20px;
+        float: left;
+      }
         .new-stores{
        margin: auto;
-       padding: 20px 30px;
-       float:left;
+       white-space:nowrap;
+      overflow-x:auto;
+      ;
+
        
+        }
+        .new-stores > div{
+          
+          padding: 20px 20px;
+          display: inline-block;
         }
 
     
  
+      .new-products{
+          margin: auto;
+          white-space:nowrap;
+         overflow-x:auto;
+         ;
+   
+          
+        }
+        .new-products > div{
+             
+          padding: 20px 20px;
+          display: inline-block;
+        }
+      
         .featured-stores{
-       margin: auto;
-       padding: 20px 30px;
-       float:left;
-       
+          margin: auto;
+          white-space:nowrap;
+         overflow-x:auto;
+         ;
+   
+          
         }
- 
-        .new-products{
-       margin: auto;
-       padding: 20px 30px;
-       float:left;
+        .featured-stores > div{
+             
+          padding: 20px 20px;
+          display: inline-block;
         }
- 
-    .featured-products{
-       margin: auto;
-       padding: 20px 30px;
-       float:left;
-    }
 
-    .member-profile{
-        margin: auto;
-        padding: 20px 30px;
-        float:left;
-    }
+        .featured-products{
+          margin: auto;
+          white-space:nowrap;
+         overflow-x:auto;
+         ;
+   
+          
+        }
+        .featured-products > div{
+             
+          padding: 20px 20px;
+          display: inline-block;
+        }
 
     #TOS-title{
         padding: 10px 10px;
