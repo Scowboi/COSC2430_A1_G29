@@ -4,11 +4,18 @@ if (document.readyState == 'loading') {
     ready()
 }
 
+// var FinalElement = document.getElementsByClassName('cart-final')
+// var FinalPrice = FinalElement.getElementsByClassName('cart-total-price')
 
+// var CouponInput = CouponElement.input
+// var failCpElement = document.getElementById('fail-coupon')
 
-
+var output1 = updateCartSumary()
+var num
 function ready() {
-    
+
+
+
     for (var i = 0; i < localStorage.length; i++){
         if (localStorage.key(i) != null)
         executeAdd();
@@ -27,14 +34,30 @@ function ready() {
         input.addEventListener('change', quantityChanged)
     }
 
+
+    var couponInputs = document.getElementsByClassName('cart-coupon-input')
+    for (var i = 0; i < couponInputs.length; i++) {
+        var input = couponInputs[i]
+        input.addEventListener('change', changeFinal)
+    }
     
 
 }
 
+
+function couponChanged(event){
+    var input = event.target
+    if (input.length > 0){
+
+    changeFinal()
+}}
+
+
 function removeCartItem(event) {
     var buttonClicked = event.target
     buttonClicked.parentElement.parentElement.remove()
-    updateCartTotal()
+    updateCartSumary()
+    changeFinal()
 }
 
 function quantityChanged(event) {
@@ -42,7 +65,9 @@ function quantityChanged(event) {
     if (isNaN(input.value) || input.value <= 0) {
         input.value = 1
     }
-    updateCartTotal()
+    updateCartSumary()
+    changeFinal()
+
 }
 
 
@@ -54,7 +79,9 @@ function executeAdd(){
     if(title !== "undefined"){
         addItemToCart(title,pricestr,imageSrc,iniquantity)
         localStorage.clear()
-        updateCartTotal()
+        updateCartSumary()
+        changeFinal()
+      
     }
 
 }
@@ -86,10 +113,11 @@ function addItemToCart(title, pricestr, imageSrc, iniquantity) {
     cartRow.getElementsByClassName('cart-quantity-input')[0].addEventListener('change', quantityChanged)
 }
 
-function updateCartTotal() {
+function updateCartSumary() {
     var cartItemContainer = document.getElementsByClassName('cart-items')[0]
     var cartRows = cartItemContainer.getElementsByClassName('cart-row')
     var total = 0
+    var final = 0
     for (var i = 0; i < cartRows.length; i++) {
         var cartRow = cartRows[i]
         var priceElement = cartRow.getElementsByClassName('cart-price')[0]
@@ -100,4 +128,81 @@ function updateCartTotal() {
         total = total + (price * quantity)
     }
     document.getElementsByClassName('cart-total-price')[0].innerText = total + ' VND'
-}
+    
+    }
+
+    function changeFinal() {
+        var cartItemContainer = document.getElementsByClassName('cart-items')[0]
+        var cartRows = cartItemContainer.getElementsByClassName('cart-row')
+        var total = 0
+        var final = 0
+        for (var i = 0; i < cartRows.length; i++) {
+            var cartRow = cartRows[i]
+            var priceElement = cartRow.getElementsByClassName('cart-price')[0]
+            var quantityElement = cartRow.getElementsByClassName('cart-quantity-input')[0]
+            var price = parseInt((priceElement.innerText.replaceAll(',', '')).replace('VND', ''))
+            console.log(priceElement.innerText.replaceAll(',', ''))
+            var quantity = parseInt(quantityElement.value)
+            total = total + (price * quantity)
+        }
+        document.getElementsByClassName('cart-final-price')[0].innerText = total + ' VND'
+        couponcheck()
+        console.log(couponcheck)
+        if (couponcheck == 1){
+        document.getElementsByClassName('cart-final-price')[0].innerText = total*20/100 + ' VND'
+        }
+        else if (couponcheck == 2){
+        document.getElementsByClassName('cart-final-price')[0].innerText = total*10/100 + ' VND'
+        }else if(couponcheck == 3){
+        document.getElementsByClassName('cart-final-price')[0].innerText = total + ' VND'
+        }}
+
+    function couponcheck(){
+        var CouponInputs = document.getElementsByClassName('cart-coupon-input')
+
+                    if (CouponInputs.value === 'COSC2430-HD'){
+                        return 1;                   
+                    } else if(CouponInputs.value === 'COSC2430-DI'){
+                       
+                        return 2;
+                    } else {
+                        return 3;
+                    }
+    }
+
+// function updateCartFinal(){
+//     var finalElement = (document.getElementsByClassName('cart-final')).getElementsByClassName('cart-total-price')[0]
+//     var cartItemContainer = document.getElementsByClassName('cart-items')[0]
+//     var cartRows = cartItemContainer.getElementsByClassName('cart-row')
+//     var CouponElement = document.getElementsByClassName('cart-coupon');
+//     var CouponInput = CouponElement.input
+//     var failCpElement = document.getElementById('fail-coupon')
+//     var total = 0
+//     var final = 0
+//     for (var i = 0; i < cartRows.length; i++) {
+//         var cartRow = cartRows[i]
+//         var priceElement = cartRow.getElementsByClassName('cart-price')[0]
+//         var quantityElement = cartRow.getElementsByClassName('cart-quantity-input')[0]
+//         var price = parseInt((priceElement.innerText.replaceAll(',', '')).replace('VND', ''))
+//         console.log(priceElement.innerText.replaceAll(',', ''))
+//         var quantity = parseInt(quantityElement.value)
+//         total = total + (price * quantity)
+//         final = total
+//     }
+//     if (CouponInput.value){
+//         if (CouponInput.value === 'COSC2430-HD'){
+//             final = (total*20)/100 + ' VND'
+//             finalElement.innerText = final
+//         } else if(CouponInput.value === 'COSC2430-DI'){
+//             final = (total*20)/100 + ' VND'
+//             finalElement.innerText = final
+//         } else {
+//             final = total + ' VND'
+//             finalElement.innerText = final
+//             failCpElement.innerHTML = 'invalid coupon'
+//         }
+//     }
+//         finalElement.innerText = final
+//         failCpElement.innerHTML = ''
+    
+// // 
