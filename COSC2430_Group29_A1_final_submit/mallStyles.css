@@ -141,16 +141,15 @@
     
  
       .new-products{
-          margin: auto;
-          white-space:nowrap;
+        margin: auto;
+        white-space:nowrap;
          overflow-x:auto;
-         ;
    
           
         }
         .new-products > div{
              
-          padding: 20px 20px;
+          padding: 10px 10px;
           display: inline-block;
         }
       
