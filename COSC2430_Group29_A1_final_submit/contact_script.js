@@ -42,9 +42,40 @@
 // 		}
 // 	};
 
+
+vad.validate = function  (){
+	var bool = [Namecheck(), Emailcheck(), Phonecheck(),checkboxes()];
+	var counterr = 0;
+	Namecheck();
+	Emailcheck();
+	Phonecheck();
+	checkboxes();
+
+
+	for (let idx in bool) {
+		if(bool[idx] == false){
+			counterr++;
+	}
+	}; 
+
+	if (counterr > 0){
+		counterr = 0
+		return false;
+
+	} else{
+		alert('contact sent')
+		return true;
+
+	}
+}
+
+
+
+
+
 function vad(event) {
-	validate();
-	event.preventDefault();
+	vad.validate();
+	console.log(vad.validate())
   }
   
 const formElement = document.querySelector('#contact_form');
@@ -55,19 +86,6 @@ formElement.addEventListener('submit', vad);
 
 
 
-function validate(){
-	
-	Namecheck();
-	Emailcheck();
-	Phonecheck();
-	checkboxes();
-	if (Namecheck() &&  Emailcheck() && Phonecheck()  && checkboxes() ){
-	
-		return true;
-	} else{
-		return false;
-	}
-}
 
 
 //name validate
@@ -95,9 +113,10 @@ function Emailcheck(){
 	regexMail = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,5}$/
 	if (inputemail.value){
 		if (regexMail.test(inputemail.value)){
+			(formElement.querySelector('.emailmess')).innerHTML = ""
 			inputemail.classList.remove("error")
 			inputemail.classList.add("success")
-			(formElement.querySelector('.emailmess')).innerHTML = ""
+
 			return true;
 		} else{
 			(formElement.querySelector('.emailmess')).innerHTML = "Please enter a valid email"
@@ -118,19 +137,22 @@ function Emailcheck(){
 function Phonecheck () {
 	inputphone = formElement.querySelector('#phone')
 	regexPhone = /^([0-9]{1})[-. ]?([0-9]{1})[-. ]?([0-9]{1})[-. ]?([0-9]{1})[-. ]?([0-9]{1})[-. ]?([0-9]{1})[-. ]?([0-9]{1})[-. ]?([0-9]{1})[-. ]?([0-9]{1})[-. ]?([0-9]{1})?[-. ]?([0-9]{1})?$/
-	if (inputphone.value != null){
+	if (inputphone.value){
 		if (regexPhone.test(inputphone.value)){
+			(formElement.querySelector('.phonemess')).innerHTML = ""
 			inputphone.classList.remove("error")
 			inputphone.classList.add("success")
-			(formElement.querySelector('.phonemess')).innerHTML = ""
+
 			return true;
 		}else{
 		(formElement.querySelector('.phonemess')).innerHTML = "invalid phone number"
 			inputphone.classList.remove("success")
 			inputphone.classList.add("error")
 			return false;}
-	}else{
+	} else{
 		(formElement.querySelector('.phonemess')).innerHTML = "Please enter phone number"
+		inputphone.classList.remove("success")
+		inputphone.classList.add("error")
 		return false;}
 
 }
@@ -140,13 +162,13 @@ function checkboxes(){
 	//select checkboxes label
 	contdays = formElement.querySelector('.contact_days')
 	var markedCheckbox = formElement.querySelectorAll('input[type="checkbox"]:checked');
-	console.log(markedCheckbox)
 	if (markedCheckbox.length < 1){
 		(contdays.querySelector('.checkboxmess')).innerHTML = "At least one checkbox must be marked"
 			contdays.classList.remove("success")
 			contdays.classList.add("error")
 			return false;}
 			else{
+				(contdays.querySelector('.checkboxmess')).innerHTML = ''
 				contdays.classList.remove("error")
 				contdays.classList.add("success")
 				return true;
@@ -189,5 +211,3 @@ txtarea.addEventListener('input', function(){
 
 	txtcal(storevar)
 })
-
-
