@@ -7,6 +7,7 @@
 
 
         <link rel="stylesheet" href="styles.css">
+        <script src="cart-script.js" async></script>
     </head>
     <body>
     <!--header bar-->
@@ -29,78 +30,37 @@
 	  </header>
     <!--cart detail-->
     <main>
-        <div class="order-content">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Product</th>
-                        <th>Quantity</th>
-                        <th>Subtotal</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <!--link to the product detail page-->
-                        <td>
-                            <div class="cart-of-each">
-                                <div>
-                                <a href="../Store Pages/product-details.html"><img src="../Store Pages/images/ThinkPad.jpg" width="100"
-                                    height="100" alt="item3"></a>
-                                <p>item3</p>
-                                </div>
-                                <a href="">remove</a>
-                            </div>
-                            </div>
-                        </td>
-                        <td><input type="number" value="1"></td>
-                        <td>data price</td>
-                    </tr>
-
-                    <tr>
-                        <!--link to the product detail page-->
-                        <td>
-                            <div class="cart-of-each">
-                                <div>
-                                <a href="../Store Pages/product-details.html"><img src="../Store Pages/images/Laptop Asus.png" width="100"
-                                    height="100" alt="item3"></a>
-                                <p>item3</p>
-                                </div>
-                                <a href="">remove</a>
-                            </div>
-                        </td>
-                        <td><input type="number" value="1"></td>
-                        <td>data price</td>
-                    </tr>
-
-                    <tr>
-                        <!--link to the product detail page-->
-                        <td>
-                            <div class="cart-of-each">
-                                <div>
-                                <a href="../Store Pages/product-details.html"><img src="../Store Pages/images/hp pavilion.png" width="100"
-                                    height="100" alt="item3"></a>
-                                <p>item3</p>
-                                </div>
-                                <a href="">remove</a>
-                            </div>
-                        </td>
-                        <td><input type="number" value="1"></td>
-                        <td>data price</td>
-                    </tr>
-                </tbody>
-                <tfoot>
-                    <tr>
-                        <td colspan="2">Total</td>
-                        <td>data price</td>
-                    </tr>
-                </tfoot>
-            </table>
-                    <!--link to pages-->
-            <div class="cart-btn">
-                <a href="../Store Pages/product-details.html" class="button">Continue shopping</a>
-                <a href="thank_you.html" class="button">Order</a>
+        <div class="container content-group">
+            <h2 class="cart-header">CART</h2>
+            <div class="cart-row">
+                <span class="cart-item cart-header cart-column">ITEM</span>
+                <span class="cart-price cart-header cart-column">PRICE</span>
+                <span class="cart-quantity cart-header cart-column">QUANTITY</span>
+            </div>
+            <div class="cart-items">
             </div>
 
+            <div class="cart-total">
+                <strong class="cart-total-title">Sumary</strong>
+                <span class="cart-total-price">$0</span>
+            </div>
+
+            <div class="cart-coupon">
+                <strong class="cart-total-title">Coupon</strong>
+                <input type="text" width="30px">
+            </div>
+
+            <div class="cart-final">
+                <strong class="cart-final-title">Total</strong>
+                <span class="cart-total-price">$0</span>
+            </div>
+
+
+            
+            <div class="cart-btn">
+               <a href="../Store Pages/product-details.html"> <button class="btn btn-primary btn-continue" type="button">Continue Shopping</button></a>
+                <a href="thank_you.html"><button class="btn btn-primary btn-purchase" type="button">PURCHASE</button></a>
+            </div>
         </div>
     </main>
 
