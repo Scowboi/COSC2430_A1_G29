@@ -1,18 +1,20 @@
 
 
 
+
+
 window.onload = function (){
     popUp();
-
-    };
-
-
-
     
+};
 
 
-function setCookie(name,value){
-    document.cookie = infor(name) + "," +infor(value); +";"
+function popUp(){
+    var cookieSearch = getCookie("popupChecked");
+    if (cookieSearch != "Y"){
+        window.open("mallPopup.html", "myWindow", "width=400, height=200");
+    }
+    
 }
 
 function getCookie(name){
@@ -28,19 +30,5 @@ function getCookie(name){
     }
 }
 
-function popUp(){
-    var cookieSearch = getCookie("popupChecked");
-    if (cookieSearch != "Y"){
-        window.open("mallPopup.html", "myWindow", "width=400, height=200");
-    }
-    
-}
 
-
-function ClosePopup() { 
-
-        setCookie("popupChecked", "Y");
-        window.close();
-    
-}
 

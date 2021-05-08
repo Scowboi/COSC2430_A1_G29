@@ -42,62 +42,75 @@
         </p>
     </div>
     </header>
+ 
     <main>
       <section id="member-profile">
         <p>About us</p>
-        <div class="member-profile">
+        <div class="member-profile">  
             <img src="images/profilePic.png" width="160px" height="160px" alt="profile-1">
+            <button class="btns" id = "btn1">Open Modal</button>
             <p>member name</p>
             <p>member role</p>
         </div>
         <div class="member-profile">
           <img src="images/profilePic.png" width="160px" height="160px" alt="profile-2">
+          <button class="btns" id="btn2">Open Modal2</button>
+        
           <p>member name</p>
           <p>member role</p>
         </div>
         <div class="member-profile">
           <img src="images/profilePic.png" width="160px" height="160px" alt="profile-3">
+          <button class="btns" id="btn3">Open Modal3</button>
           <p>member name</p>
           <p>member role</p>
         </div>
         <div class="member-profile">
           <img src="images/profilePic.png" width="160px" height="160px" alt="profile-4">
+          <button class="btns" id="btn4">Open Modal4</button>
           <p>member name</p>
           <p>member role</p>
         </div>
-        <div class="member-profile">
-          <img src="images/profilePic.png" width="160px" height="160px" alt="profile-5">
-          <p>member name</p>
-          <p>member role</p>
+
+        <div id="modal1" class="modal">
+          <div class="modal-content">
+                <img src="images/profilePic.png" width="500px" height="500px" alt="modalProfile-1">
+                  <span id="close1" class="close">&times;</span>                                                               
+                  <p>Vuong Viet Dung</p>
+                  <p>Developer</p>
+                </div>
+      
+         
+          <div id="modal2" class="modal">
+            <div class="modal-content">
+              <img src="images/profilePic.png" width="500px" height="500px" alt="modalProfile-2">
+              <span id="close2" class="close">&times;</span>                                                               
+              <p>Truong Dai Duong</p>
+              <p>Developer2</p>
+          </div>
+          <div id="modal3" class="modal">
+            <div class="modal-content">
+                <img src="images/profilePic.png" width="500px" height="500px" alt="modalProfile-3">
+                <span id="close3" class="close">&times;</span>                                                               
+                <p>Hayato Tokunaga</p>
+                <p>Developer3</p>
+                </div>
+          <div id="modal4" class="modal">
+            <div class="modal-content">
+                  <img src="images/profilePic.png" width="500px" height="500px" alt="modalProfile-4">
+                    <span id="close4" class="close">&times;</span>                                                               
+                    <p>Vu Gia Thinh</p>
+                    <p>Developer4</p>
+                  </div>
         </div>
         <div id="clear">
           <div id=""></div>
       </div>
     </div>
       </section>
-      <button class="openBtn">modal open</button>
-      <div class="container">
-        <div class="modal">
-           <button onclick="CloseModal();"><img src="images/profilePic.png" alt=""></button>
-           <h1>-Infor 1 -</h1>
-           <h2>Infor 2 </h2>
-           <h2>Infor 3</h2>
-           <figure><img src="images/user.png" alt=""></figure>
-        </div>
   </div>
-  
-  <script>
-        function CloseModal(){
-           var CloseModal = document.querySelector(".container");
-           CloseModal.classList.add("CloseModal");
-        }
-  </script>
     </main>
-
     
-
-
-
     <footer>
         <div id=footerDiv>
             <nav>
@@ -109,5 +122,7 @@
             </nav>
         </div>
     </footer>
+    <script src="mallModal.js"></script> 
   </body>
+    
 </html>
