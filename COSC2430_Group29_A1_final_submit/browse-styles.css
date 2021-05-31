@@ -1,48 +1,40 @@
-a{
-    text-decoration: none;
+a {
+  text-decoration: none;
 }
 
-.letter-opt{
-    padding-left: 50px;
-    padding-right: 50px;
-    margin: auto;
+.letter-opt {
+  padding-left: 50px;
+  padding-right: 50px;
+  margin: auto;
 }
 
-.letter{
-    display: inline-block;
-    padding: 8px 15px;
-    margin: 30px 10px;
-    border: 1px solid black;
+.letter {
+  display: inline-block;
+  padding: 8px 15px;
+  margin: 30px 10px;
+  border: 1px solid black;
 }
 
-.show-stores{
-    width: 1600px;
-    margin: auto;
-    padding: 20px 30px;
-}
-.sname{
+.sname {
   display: block;
   font-size: 20px;
+  text-align: center;
 }
-.store{
-    height: auto;
-    display: inline-block;
-    flex-basis: 25%;
-    padding: 10px 50px;
-    margin-bottom: 50px;
-    vertical-align: top;
-    text-align: center;
-    min-width: 120px;
+.store {
+  display: inline-block;
+  padding: 10px 50px;
+  margin-bottom: 50px;
+  max-width: fit-content;
+  /* vertical-align: top; */
 }
-
-.cate-nav{
-    padding-right: 50px;
-    text-align: right;
-}
-a{
-    text-decoration: none;
+.store-logo {
+  max-width: 150px;
 }
 
+.cate-nav {
+  padding-right: 50px;
+  text-align: right;
+}
 
 * {
   margin: 0;
@@ -55,43 +47,45 @@ header {
   color: green;
 }
 footer {
-    min-width: 100%;
-    align-items: center;
+  min-width: 100%;
+  align-items: center;
   background-color: skyblue;
   height: fit-content;
   clear: both;
-  bottom:0;
-  position: absolute;
-
+  bottom: 0;
+  position: relative;
 }
 main {
-    height: 90vh;
+  min-height: 100vh;
   background-color: wheat;
-  
 }
- #headerLogo{
-padding-left: 2%;
- text-align: initial;
-    width: 30%;
-    height: 50px;
- }
+#headerLogo {
+  padding-left: 2%;
+  text-align: initial;
+  width: 30%;
+  height: 50px;
+}
 
- #headerLogo img{
+#headerLogo img {
+  margin: 15px;
+  max-height: 70px;
+}
 
-     margin: 15px;
-     max-height: 70px;
- }
+#headerNav {
+  float: right;
+  width: 20%;
+}
 
- #headerNav{
-   float: right;
-   width: 20%;
- }
-
- #headerP {
+#headerP {
   width: calc(100% - 15% - 30%);
   text-align: center;
- }
+}
 
- #footerDiv {
-   text-align: center;
- }
+#footerDiv {
+  text-align: center;
+}
+
+.Lselected {
+  color: rgb(0, 47, 255);
+  background-color: rgb(223, 131, 12);
+}
