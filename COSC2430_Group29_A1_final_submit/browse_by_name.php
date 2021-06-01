@@ -14,14 +14,16 @@ else{
 } 
 function display_name_stores($stores,$selected){
     $count = 0; 
+    $numstring = "0123456789";
   foreach($stores as $store => $col){
     $first_letter = $col["name"][0];
+    
   
-    if ((strtoupper($first_letter) == strtoupper($selected)) || ((substr($col["name"],0,2) == "21") && (strtoupper($selected) == "C"))){
+    if ((strtoupper($first_letter) == strtoupper($selected)) || (strpos($numstring,$first_letter) && ($selected == "num"))){
       echo<<<"MATCHSTORE"
-      <div class="store" id = "{$col["id"]}">
-          <a href="Store Pages/store-page.php?id={$col["id"]}"><img src="images/Amd.png" alt="Storeimage" class="store-logo"></a>
-          <a href="Store Pages/store-page.php?id={$col["id"]}" class="sname">{$col["name"]}</a>
+      <div class="store" id="{$col["id"]}">
+          <a href="store-pages.php?store_id={$col["id"]}"><img src="images/Amd.png" alt="Storeimage" class="store-logo"></a>
+          <a href="store-pages.php?store_id={$col["id"]}" class="sname">{$col["name"]}</a>
       </div>
       MATCHSTORE;
       $count++;
@@ -32,8 +34,15 @@ function display_name_stores($stores,$selected){
     }
 
 }
+// var_dump($_GET["letter"]);
+// var_dump($selected);
 
-
+// if ($selected == "#"){
+//   echo "ok";
+// }
+// else{
+//   echo "error";
+// }
 
 
 function print_letters($select){
@@ -50,6 +59,18 @@ function print_letters($select){
       <a href="browse_by_name.php?letter={$letter}" class="letter">{$letter}</a>
       CHAR;
     }
+    }
+
+    if ($select == "num"){
+      echo<<<"NUMSE"
+      <a href="browse_by_name.php?letter=num" class="letter Lselected">#</a>
+      NUMSE;
+    }
+    
+    else{
+      echo<<<"NUM"
+      <a href="browse_by_name.php?letter=num" class="letter">#</a>
+      NUM;
     }
   }
 
@@ -72,22 +93,22 @@ function print_letters($select){
 <body>
     <!--header-->
     <header>
-		<div id="header">
-		  <section id ='headerLogo'>
-			<img src="images/Logo.png" alt ="headrLogo">
-		  </section>
-		  <nav id="headerNav">
-			  <a href="index.php">Home</a>
-			  &emsp;
-			  <a href="login.html">Account</a>
-			  &emsp;
-			  <a href="cart/cart.html">Cart</a>
-		  </nav>
-		  <p id="headerP">
-			Welcome to the mall
-		  </p>
-	  </div>
-	  </header>
+        <div id="header">
+          <section id ='headerLogo'>
+            <img src="images/Logo.png" alt ="headrLogo">
+          </section>
+          <nav id="headerNav">
+              <a href="index.php">Home</a>
+              &emsp;
+              <a href="login.php">Account</a>
+              &emsp;
+              <a href="cart.php">Cart</a>
+          </nav>
+          <p id="headerP">
+            Welcome to the mall
+          </p>
+      </div>
+      </header>
       <main class="container">
     <!--store list-->
     <h1>Browse by name</h1>
@@ -171,15 +192,15 @@ function print_letters($select){
     <footer>
         <div id=footerDiv>
             <nav>
-                <a href="mall_copyright.php">Copyright</a>
+                <a href="mallCopyright.html">Copyright</a>
                 &emsp;
-                <a href="mall_terms_of_service.php">Term of Service</a>
+                <a href="mallTermsOfService.html">Term of Service</a>
                 &emsp;
-                <a href="mall_privacy_policy.php">Privacy Policy</a>
+                <a href="mallPrivacyPolicy.html">Privacy Policy</a>
                 &emsp;
-                <a href="mall_about_us.php">About us</a>
+                <a href="mallAboutUs.html">About us</a>
                 &emsp;
-                <a href="mall_fees.html">Our Fees</a>
+                <a href="mallFees.html">Our Fees</a>
                 &emsp;
                 <a href="contact_form.html">Contact</a>
                 &emsp;
