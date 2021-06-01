@@ -26,19 +26,24 @@ function get_feature_products($someid) {
     }
 }
 
-function sort_created_time($p1) {
-    $date = date("Y-m-d H:i:s");
-    return strtotime($date) - strtotime($p1);
+function sort_created_time($p1, $p2) {
+    return strtotime($p2['created_time']) - strtotime($p1['created_time']);
 }
 
 function get_new_products($something) {
     $c = read_products();
+    usort($c, 'sort_created_time');
+    $count = 0;
     foreach ($c as $d) {
-        if ($d['store_id'] == $something && sort_created_time($d['created_time'])) {
+        if ($d['store_id'] == $something) {
             echo '<div>';
             echo'<img src="images/Amd.png" width="40px"  height="40px" alt="amd-logo">';
             echo '<p>'.$d['name'].'</p>';
             echo'</div>';
+        $count++;
+        if ($count == 5) {
+            break;
+        }
         }
     }
 }
