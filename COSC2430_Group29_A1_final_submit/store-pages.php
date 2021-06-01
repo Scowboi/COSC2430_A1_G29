@@ -78,7 +78,7 @@ function get_feature_products($someid) {
                     <summary>PRODUCTS</summary>
                     <a href="category.html">Browse Products by Category</a>
                     <br>
-                    <a href="time.html">Browse Products by Created Time</a>
+                    <a href="browse_product_by_time.php?store-id=<?$storeid?>">Browse Products by Created Time</a>
                 </details>
             </nav>
         </header>
