@@ -166,25 +166,28 @@
 			<section id ='headerLogo'>
 				<img src="images/Logo.png" alt ="headrLogo">
 			</section>
-			<nav id="headerNav2">
-				<a href="mallFees.html">Fees</a>
-				&emsp;
-				<br>
-				<a href="contact_form.html">Contact</a>
-				&emsp;
-				<br>
-				<a href="FAQ.html">FAQs</a>
-				&emsp;
-			</nav>
-			<nav id="headerNav">
-				<a href="index.html">Home</a>
-				&emsp;
-				<br>
-				<a href="my_account.html">Myaccount</a>
-				&emsp;
-				<br>
-				<a href="browse.html">Browse</a>
-			</nav>
+			      <nav id="headerNav2">
+          <a href="mall_fees.html">Fees</a>
+          &emsp;
+          <br>
+          <a href="contact_form.html">Contact</a>
+          &emsp;
+          <br>
+          <a href="FAQ.html">FAQs</a>
+          &emsp;
+        </nav>
+        <nav id="headerNav">
+          <a href="index.php">Home</a>
+          &emsp;
+          <br>
+          <a href="my_account.html">Myaccount</a>
+          &emsp;
+          <br>
+          <a href="browse.html">Browse</a>
+          &emsp;
+          <br>
+          <a href="mall_about_us.php">AboutUs</a>
+      </nav>
 			<p id="headerP">Welcome to the mall</p>
 		</div>
 	</header>
@@ -235,12 +238,13 @@
 	</main>
 	<footer>
 		<div id=footerDiv>
-			<nav>
-				<a href="mallCopyright.html">Copyright</a>
-				&emsp;
-				<a href="mallTermsOfService.html">Term of Service</a>
-				&emsp;
-				<a href="mallPrivacyPolicy.html">Privacy Policy</a>
+          <nav>
+                <a href="mall_copyright.php">Copyright</a>
+                &emsp;
+                <a href="mall_terms_of_service.php">Term of Service</a>
+                &emsp;
+                <a href="mall_privacy_policy.php">Privacy Policy</a>
+
 			</nav>
 		</div>
 	</footer>

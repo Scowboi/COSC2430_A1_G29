@@ -138,7 +138,7 @@ else echo    ' <div id="TOS"  >
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="mallStyles.css">
+    <link rel="stylesheet" href="mall_styles.css">
     <title>Box Model</title>
     <style>
       * {
@@ -155,7 +155,7 @@ else echo    ' <div id="TOS"  >
           <img src="images/Logo.png" alt ="headrLogo">
         </section>
         <nav id="headerNav2">
-          <a href="mallFees.html">Fees</a>
+          <a href="mall_fees.html">Fees</a>
           &emsp;
           <br>
           <a href="contact_form.html">Contact</a>
@@ -165,13 +165,17 @@ else echo    ' <div id="TOS"  >
           &emsp;
         </nav>
         <nav id="headerNav">
-          <a href="index.html">Home</a>
+          <a href="index.php">Home</a>
           &emsp;
           <br>
           <a href="my_account.html">Myaccount</a>
           &emsp;
           <br>
           <a href="browse.html">Browse</a>
+          &emsp;
+          <br>
+          <a href="mall_about_us.php">AboutUs</a>
+      </nav>
       </nav>
       <p id="headerP">
         Welcome to the mall
@@ -183,12 +187,13 @@ else echo    ' <div id="TOS"  >
     </main>
     <footer>
         <div id=footerDiv>
-            <nav>
-                <a href="mallCopyright.html">Copyright</a>
+          <nav>
+                <a href="mall_copyright.php">Copyright</a>
                 &emsp;
-                <a href="mallTermsOfService.html">Term of Service</a>
+                <a href="mall_terms_of_service.php">Term of Service</a>
                 &emsp;
-                <a href="mallPrivacyPolicy.html">Privacy Policy</a>
+                <a href="mall_privacy_policy.php">Privacy Policy</a>
+
             </nav>
         </div>
     </footer>

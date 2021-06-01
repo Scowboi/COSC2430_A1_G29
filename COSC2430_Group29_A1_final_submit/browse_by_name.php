@@ -77,7 +77,7 @@ function print_letters($select){
 			<img src="images/Logo.png" alt ="headrLogo">
 		  </section>
 		  <nav id="headerNav">
-			  <a href="index.html">Home</a>
+			  <a href="index.php">Home</a>
 			  &emsp;
 			  <a href="login.html">Account</a>
 			  &emsp;
@@ -171,15 +171,15 @@ function print_letters($select){
     <footer>
         <div id=footerDiv>
             <nav>
-                <a href="mallCopyright.html">Copyright</a>
+                <a href="mall_copyright.php">Copyright</a>
                 &emsp;
-                <a href="mallTermsOfService.html">Term of Service</a>
+                <a href="mall_terms_of_service.php">Term of Service</a>
                 &emsp;
-                <a href="mallPrivacyPolicy.html">Privacy Policy</a>
+                <a href="mall_privacy_policy.php">Privacy Policy</a>
                 &emsp;
-                <a href="mallAboutUs.html">About us</a>
+                <a href="mall_about_us.php">About us</a>
                 &emsp;
-                <a href="mallFees.html">Our Fees</a>
+                <a href="mall_fees.html">Our Fees</a>
                 &emsp;
                 <a href="contact_form.html">Contact</a>
                 &emsp;
