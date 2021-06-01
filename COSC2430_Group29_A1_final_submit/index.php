@@ -16,20 +16,24 @@ fclose($file);
 if(count($normal_stores) > 10){
     for($x = 0; $x <= 9; $x++){
         $name = $normal_stores[$x]['1'];
-        echo '<div>';
-        echo'<a href="Store Pages/store-pages.html"><img src="images/Amd.png" width="40px"  height="40px" alt="amd-logo"></a>';
-        echo '<a href="Store Pages/store-pages.html"><p>'.$name.'</p></a>';
-        echo'</div>';
+        echo<<<"STORE"
+        <div>
+            <a href="store-pages.php?store_id={$normal_stores[$x]['0']}"><img src="images/Amd.png" width="40px"  height="40px" alt="amd-logo"></a>
+            <a href="store-pages.php?store_id={$normal_stores[$x]['0']}"><p>$name</p></a>
+        </div>
+        STORE;
         }
     }
 
   if(count($normal_stores) <= 10){
       for($x = 0; $x <= count($normal_stores)-1; $x++){
           $name = $normal_stores[$x]['1'];
-          echo '<div>';
-          echo'<a href="Store Pages/store-pages.html"><img src="images/Amd.png" width="40px"  height="40px" alt="amd-logo"></a>';
-          echo '<a href="Store Pages/store-pages.html"><p>'.$name.'</p></a>';
-          echo'</div>';
+          echo<<<"STORE"
+          <div>
+              <a href="store-pages.php?store_id={$normal_stores[$x]['0']}"><img src="images/Amd.png" width="40px"  height="40px" alt="amd-logo"></a>
+              <a href="store-pages.php?store_id={$normal_stores[$x]['0']}"><p>$name</p></a>
+          </div>
+          STORE;
           }
       }
 }
@@ -103,20 +107,24 @@ function write_normal_products(){
       if(count($featured_stores) > 10){
           for($x = 0; $x <= 9; $x++){
               $name = $featured_stores[$x]['1'];
-              echo '<div>';
-              echo'<a href="Store Pages/store-pages.html"><img src="images/Amd.png" width="40px"  height="40px" alt="amd-logo"></a>';
-              echo '<a href="Store Pages/store-pages.html"><p>'.$name.'</p></a>';
-              echo'</div>';
+              echo<<<"STORE"
+              <div>
+                  <a href="store-pages.php?store_id={$featured_stores[$x]['0']}"><img src="images/Amd.png" width="40px"  height="40px" alt="amd-logo"></a>
+                  <a href="store-pages.php?store_id={$featured_stores[$x]['0']}"><p>$name</p></a>
+              </div>
+              STORE;
               }
           }
 
           if(count($featured_stores) <= 10){
             for($x = 0; $x <= count($featured_stores)-1; $x++){
                 $name = $featured_stores[$x]['1'];
-                echo '<div>';
-                echo'<a href="Store Pages/store-pages.html"><img src="images/Amd.png" width="40px"  height="40px" alt="amd-logo"></a>';
-                echo '<a href="Store Pages/store-pages.html"><p>'.$name.'</p></a>';
-                echo'</div>';
+                echo<<<"STORE"
+                <div>
+                    <a href="store-pages.php?store_id={$featured_stores[$x]['0']}"><img src="images/Amd.png" width="40px"  height="40px" alt="amd-logo"></a>
+                    <a href="store-pages.php?store_id={$featured_stores[$x]['0']}"><p>$name</p></a>
+                </div>
+                STORE;
                 }
             }
       }
