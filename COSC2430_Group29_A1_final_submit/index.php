@@ -271,43 +271,7 @@ function write_normal_products(){
           <div class="featured-products">
           <?php write_featured_products();
             ?>
-            <!-- <div>
-            <a href="Store Pages/product-details.html"><img src="images/product.jpg" width="40px" height="40px" alt="product-image"></a>
-            <a href="Store Pages/product-details.html"><p>Product name</p></a>
-            <p>1000$</p>
-            <a href="Store Pages/store-pages.html"><p>store name</p></a>
-          </div>
-          <div>
-            <a href="Store Pages/product-details.html"><img src="images/product.jpg" width="40px" height="40px" alt="product-image"></a>
-            <a href="Store Pages/product-details.html"><p>Product name</p></a>
-            <p>1000$</p>
-            <a href="Store Pages/store-pages.html"><p>store name</p></a>
-          </div>
-          <div>
-            <a href="Store Pages/product-details.html"><img src="images/product.jpg" width="40px" height="40px" alt="product-image"></a>
-            <a href="Store Pages/product-details.html"><p>Product name</p></a>
-            <p>1000$</p>
-            <a href="Store Pages/store-pages.html"><p>store name</p></a>
-          </div>
-          <div>
-            <a href="Store Pages/product-details.html"><img src="images/product.jpg" width="40px" height="40px" alt="product-image"></a>
-            <a href="Store Pages/product-details.html"><p>Product name</p></a>
-            <p>1000$</p>
-            <a href="Store Pages/store-pages.html"><p>store name</p></a>
-          </div>
-          <div>
-            <a href="Store Pages/product-details.html"><img src="images/product.jpg" width="40px" height="40px" alt="product-image"></a>
-            <a href="Store Pages/product-details.html"><p>Product name</p></a>
-            <p>1000$</p>
-            <a href="Store Pages/store-pages.html"><p>store name</p></a>
-          </div>
-          <div>
-            <a href="Store Pages/product-details.html"><img src="images/product.jpg" width="40px" height="40px" alt="product-image"></a>
-            <a href="Store Pages/product-details.html"><p>Product name</p></a>
-            <p>1000$</p>
-            <a href="Store Pages/store-pages.html"><p>store name</p></a>
-          </div> --> 
-        
+            
         <div id="clear">
           <div id=""></div>
       </div>
