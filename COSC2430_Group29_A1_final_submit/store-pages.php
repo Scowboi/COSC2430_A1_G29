@@ -18,8 +18,8 @@ function get_feature_products($someid) {
     foreach ($pro as $a) {
         if ($a['featured_in_store'] == TRUE && $a['store_id'] == $someid) {
             echo '<div>';
-            echo'<img src="images/Amd.png" width="40px"  height="40px" alt="amd-logo">';
-            echo '<p>'.$a['name'].'</p>';
+            echo' <a href="product_detail.php?pid='.$a['id'].'"><img src="images/Amd.png" width="40px"  height="40px" alt="amd-logo"></a>';
+            echo '<a href="product_detail.php?pid='.$a['id'].'"><p>'.$a['name'].'</p></a>';
             echo'</div>';
             
         }
@@ -37,8 +37,8 @@ function get_new_products($something) {
     foreach ($c as $d) {
         if ($d['store_id'] == $something) {
             echo '<div>';
-            echo'<img src="images/Amd.png" width="40px"  height="40px" alt="amd-logo">';
-            echo '<p>'.$d['name'].'</p>';
+            echo' <a href="product_detail.php?pid='.$d['id'].'"><img src="images/Amd.png" width="40px"  height="40px" alt="amd-logo"></a>';
+            echo '<a href="product_detail.php?pid='.$d['id'].'"><p>'.$d['name'].'</p></a>';
             echo'</div>';
         $count++;
         if ($count == 5) {
