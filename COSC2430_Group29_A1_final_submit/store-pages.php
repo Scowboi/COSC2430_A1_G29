@@ -26,10 +26,30 @@ function get_feature_products($someid) {
     }
 }
 
+function sort_created_time($p1) {
+    $date = date("Y-m-d H:i:s");
+    return strtotime($date) - strtotime($p1);
+}
+
+function get_new_products($something) {
+    $c = read_products();
+    foreach ($c as $d) {
+        if ($d['store_id'] == $something && sort_created_time($d['created_time'])) {
+            echo '<div>';
+            echo'<img src="images/Amd.png" width="40px"  height="40px" alt="amd-logo">';
+            echo '<p>'.$d['name'].'</p>';
+            echo'</div>';
+        }
+    }
+}
 
 ?>
 
 <style>
+    .new-product > div {
+        padding: 10px 10px;
+        display: inline-block;
+    }
     .feature-product > div {
         padding: 10px 10px;
         display: inline-block;
@@ -83,10 +103,10 @@ function get_feature_products($someid) {
             </nav>
         </header>
         <main>
-            <div id="new-product">
+            <div class="new-product">
                 <?php echo '<h1>'.get_store_name($storeid).'</h1>'; ?>
                 <h2>NEW PRODUCTS</h2>
-                
+                <?php get_new_products($storeid) ?>
             </div>
             <div class="feature-product">
                 <h2>FEATURE PRODUCTS</h2>
