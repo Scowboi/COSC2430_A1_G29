@@ -69,10 +69,10 @@ function search_page_products($time,$storeid = ""){
             if ($col["store_id"] == $store){
               echo<<<"MATCHP"
                 <section>
-                    <a href="product-details.php?pid={$col["id"]}">
+                    <a href="product_detail.php?pid={$col["id"]}">
                         <img src="images/hp pavilion.png" width="300" alt="{$col["name"]}">
                     </a>
-                    <a href="product-details.php?pid={$col["id"]}">
+                    <a href="product_detail.php?pid={$col["id"]}">
                         <h2>{$col["name"]}</h2>
                     </a>
                     <p>Price: {$col["price"]}</p>
@@ -140,7 +140,7 @@ function search_page_products($time,$storeid = ""){
                     <summary>PRODUCTS</summary>
                     <a href="category.html">Browse Products by Category</a>
                     <br>
-                    <a href="browse_product_by_time.php?store-id=<?php echo $storeID; ?>">Browse Products by Created Time</a>
+                    <a href="browse_product_by_time.php?store-id=2">Browse Products by Created Time</a>
                 </details>
             </nav>
         </header>
@@ -158,34 +158,7 @@ function search_page_products($time,$storeid = ""){
             <?php
             search_page_products($time,$storeID);
              ?>
-            <!-- <section> -->
-                <!-- Original image below sourced for educational purposes:
-                    https://dienmaythienhoa.vn/may-tinh-xach-tay-asus-core-i5-s330fn-ey037t-mau-vang-253432.html -->
-                <!-- <a href="product-details.html"> -->
-                    <!-- <img src="images/Laptop Asus.png" width="300" alt="Laptop Asus"> -->
-                <!-- </a> -->
-                <!-- <a href="product-details.html"> -->
-                    <!-- <h2>Laptop Asus S330FN-EY037T</h2> -->
-                <!-- </a> -->
-                <!-- <p>Price: 20,000,000 VND</p> -->
-                <!-- <p>Description:</p> -->
-                <!-- <p>Created Date:</p> -->
-            <!-- </section> -->
-            <!-- <br> -->
 
-            <!-- <section> -->
-                <!-- Original image below sourced for educational purposes:
-                    https://laptop123.com.vn/san-pham/hp-pavilion-15-eg0003tx-2d9c5pa-4451.html?gclid=Cj0KCQjwgtWDBhDZARIsADEKwgPNv1zZFlzlTE-pfHD7LYWEKjsRf-0zLGe5sjtr5YIX2B0_Wwom53MaAv0XEALw_wcB -->
-                <!-- <a href="product-details.html"> -->
-                    <!-- <img src="images/hp pavilion.png" width="300" alt="Laptop HD"> -->
-                <!-- </a> -->
-                <!-- <a href="product-details.html"> -->
-                    <!-- <h2>HP Pavilion 15-eg0003TX 2D9C5PA</h2> -->
-                <!-- </a> -->
-                <!-- <p>Price: 17,000,000 VND</p> -->
-                <!-- <p>Description:</p> -->
-                <!-- <p>Created Date:</p> -->
-            <!-- </section>
         </main>
         <br>
         <footer>
