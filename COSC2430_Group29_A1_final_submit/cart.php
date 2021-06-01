@@ -1,4 +1,6 @@
 <?php
+
+//PLEASE RELOAD IF YOU DON'T SEE YOUR CART
 session_start();
 require("read_data.php");
 $title = [];
