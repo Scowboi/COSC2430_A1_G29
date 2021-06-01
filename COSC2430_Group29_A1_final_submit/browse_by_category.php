@@ -11,7 +11,7 @@ require("read_data.php");
 function print_categories(){
   $default = "1";
   $categories = read_categories();
-  if($_GET){
+  if(isset($_GET["category"])){
     foreach ($categories as $cnum => $item){
       if ($_GET["category"] == $item["name"]){
         $default = $item["id"];
@@ -50,9 +50,9 @@ function display_stores(){
       $count = 0;
       if ($col["category_id"] == $default){
         echo<<<"MATCHSTORE"
-        <div class="store" id = "{$col["id"]}">
-            <a href="Store Pages/store-page.php?id={$col["id"]}"><img src="images/Amd.png" alt="Storeimage" class="store-logo"></a>
-            <a href="Store Pages/store-page.php?id={$col["id"]}" class="sname">{$col["name"]}</a>
+        <div class="store" id="{$col["id"]}">
+            <a href="store-pages.php?store_id={$col["id"]}"><img src="images/Amd.png" alt="Storeimage" class="store-logo"></a>
+            <a href="store-pages.php?store_id={$col["id"]}" class="sname">{$col["name"]}</a>
         </div>
         MATCHSTORE;
         $count++;
@@ -125,9 +125,9 @@ function display_stores(){
           <nav id="headerNav">
               <a href="index.php">Home</a>
               &emsp;
-              <a href="login.html">Account</a>
+              <a href="login.php">Account</a>
               &emsp;
-              <a href="cart/cart.html">Cart</a>
+              <a href="cart.php">Cart</a>
           </nav>
           <p id="headerP">
             Welcome to the mall
@@ -190,16 +190,16 @@ function display_stores(){
     <!--footer-->
     <footer>
         <div id=footerDiv>
-        <nav>
-                <a href="mall_copyright.php">Copyright</a>
+            <nav>
+                <a href="mallCopyright.html">Copyright</a>
                 &emsp;
-                <a href="mall_terms_of_service.php">Term of Service</a>
+                <a href="mallTermsOfService.html">Term of Service</a>
                 &emsp;
-                <a href="mall_privacy_policy.php">Privacy Policy</a>
+                <a href="mallPrivacyPolicy.html">Privacy Policy</a>
                 &emsp;
-                <a href="mall_about_us.php">About us</a>
+                <a href="mallAboutUs.html">About us</a>
                 &emsp;
-                <a href="mall_fees.html">Our Fees</a>
+                <a href="mallFees.html">Our Fees</a>
                 &emsp;
                 <a href="contact_form.html">Contact</a>
                 &emsp;
