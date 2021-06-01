@@ -84,8 +84,8 @@ function write_normal_products(){
           $price = $normalp_csv[$x]['2'];
           $sname = $stores_name[$x];
           echo '<div>';
-          echo'<a href="Store Pages/store-pages.html"><img src="images/Amd.png" width="40px"  height="40px" alt="amd-logo"></a>';
-          echo '<a href="Store Pages/store-pages.html"><p>'.$sname.'</p><p>'.$name.'</p><p>'.$price.'</p></a>';
+          echo'<a href="product_detail.php?pid='.$normalp_csv[$x]['0'].'"><img src="images/Amd.png" width="40px"  height="40px" alt="amd-logo"></a>';
+          echo '<a href="product_detail.php?pid='.$normalp_csv[$x]['0'].'"><p>'.$sname.'</p><p>'.$name.'</p><p>'.$price.'</p></a>';
           echo'</div>';
           }
     }
@@ -174,8 +174,8 @@ function write_normal_products(){
                 $price = $featuredp_csv[$x]['2'];
                 $sname = $stores_name[$x];
                 echo '<div>';
-                echo'<a href="Store Pages/store-pages.html"><img src="images/Amd.png" width="40px"  height="40px" alt="amd-logo"></a>';
-                echo '<a href="Store Pages/store-pages.html"><p>'.$sname.'</p><p>'.$name.'</p><p>'.$price.'</p></a>';
+                echo'<a href="product_detail.php?pid='.$featuredp_csv[$x]['0'].'"><img src="images/Amd.png" width="40px"  height="40px" alt="amd-logo"></a>';
+                echo'<a href="product_detail.php?pid='.$featuredp_csv[$x]['0'].'"><p>'.$sname.'</p><p>'.$name.'</p><p>'.$price.'</p></a>';
                 echo'</div>';
                 }
           }
@@ -192,7 +192,7 @@ function write_normal_products(){
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="mall_styles.css">
+    <link rel="stylesheet" href="mallStyles.css">
     <!-- <script src="Popup.js"></script> -->
 
     <title>Box Model</title>
@@ -204,39 +204,23 @@ function write_normal_products(){
 
   </head>
   <body>
-    <header>
-      <div id="header">
-        <section id ='headerLogo'>
-          <img src="images/Logo.png" alt ="headrLogo">
-        </section>
-        <nav id="headerNav2">
-          <a href="mall_fees.html">Fees</a>
-          &emsp;
-          <br>
-          <a href="contact_form.html">Contact</a>
-          &emsp;
-          <br>
-          <a href="FAQ.html">FAQs</a>
-          &emsp;
-        </nav>
-        <nav id="headerNav">
-          <a href="index.php">Home</a>
-          &emsp;
-          <br>
-          <a href="my_account.html">Myaccount</a>
-          &emsp;
-          <br>
-          <a href="browse.html">Browse</a>
-          &emsp;
-          <br>
-          <a href="mall_about_us.php">AboutUs</a>
-      </nav>
-      </nav>
-      <p id="headerP">
-        Welcome to the mall
-      </p>
-    </div>
-    </header>
+  <header>
+        <div id="header">
+          <section id ='headerLogo'>
+            <img src="images/Logo.png" alt ="headrLogo">
+          </section>
+          <nav id="headerNav">
+              <a href="index.php">Home</a>
+              &emsp;
+              <a href="login.php">Account</a>
+              &emsp;
+              <a href="cart.php">Cart</a>
+          </nav>
+          <p id="headerP">
+            Welcome to the mall
+          </p>
+      </div>
+      </header>
     <main>
          
       <section id="new-storesS">
@@ -275,7 +259,43 @@ function write_normal_products(){
           <div class="featured-products">
           <?php write_featured_products();
             ?>
-            
+            <!-- <div>
+            <a href="Store Pages/product-details.html"><img src="images/product.jpg" width="40px" height="40px" alt="product-image"></a>
+            <a href="Store Pages/product-details.html"><p>Product name</p></a>
+            <p>1000$</p>
+            <a href="Store Pages/store-pages.html"><p>store name</p></a>
+          </div>
+          <div>
+            <a href="Store Pages/product-details.html"><img src="images/product.jpg" width="40px" height="40px" alt="product-image"></a>
+            <a href="Store Pages/product-details.html"><p>Product name</p></a>
+            <p>1000$</p>
+            <a href="Store Pages/store-pages.html"><p>store name</p></a>
+          </div>
+          <div>
+            <a href="Store Pages/product-details.html"><img src="images/product.jpg" width="40px" height="40px" alt="product-image"></a>
+            <a href="Store Pages/product-details.html"><p>Product name</p></a>
+            <p>1000$</p>
+            <a href="Store Pages/store-pages.html"><p>store name</p></a>
+          </div>
+          <div>
+            <a href="Store Pages/product-details.html"><img src="images/product.jpg" width="40px" height="40px" alt="product-image"></a>
+            <a href="Store Pages/product-details.html"><p>Product name</p></a>
+            <p>1000$</p>
+            <a href="Store Pages/store-pages.html"><p>store name</p></a>
+          </div>
+          <div>
+            <a href="Store Pages/product-details.html"><img src="images/product.jpg" width="40px" height="40px" alt="product-image"></a>
+            <a href="Store Pages/product-details.html"><p>Product name</p></a>
+            <p>1000$</p>
+            <a href="Store Pages/store-pages.html"><p>store name</p></a>
+          </div>
+          <div>
+            <a href="Store Pages/product-details.html"><img src="images/product.jpg" width="40px" height="40px" alt="product-image"></a>
+            <a href="Store Pages/product-details.html"><p>Product name</p></a>
+            <p>1000$</p>
+            <a href="Store Pages/store-pages.html"><p>store name</p></a>
+          </div> --> 
+        
         <div id="clear">
           <div id=""></div>
       </div>
@@ -286,13 +306,12 @@ function write_normal_products(){
     </main>
     <footer>
         <div id=footerDiv>
-          <nav>
-                <a href="mall_copyright.php">Copyright</a>
+            <nav>
+                <a href="mallCopyright.html">Copyright</a>
                 &emsp;
-                <a href="mall_terms_of_service.php">Term of Service</a>
+                <a href="mallTermsOfService.html">Term of Service</a>
                 &emsp;
-                <a href="mall_privacy_policy.php">Privacy Policy</a>
-
+                <a href="mallPrivacyPolicy.html">Privacy Policy</a>
             </nav>
         </div>
     </footer>
