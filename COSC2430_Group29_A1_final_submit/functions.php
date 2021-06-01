@@ -112,6 +112,7 @@
 					$db_pass = $row['password'];
 					if(md5($password)==$db_pass)
 					{
+						$_SESSION['LOGGEDIN'] = true;
 						header("location: logged.php");
 						$_SESSION['ID']=$row['id'];
 						$_SESSION['EMAIL']=$row['email'];
