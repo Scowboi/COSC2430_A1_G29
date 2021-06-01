@@ -47,59 +47,7 @@ function Validator(options) {
 
     // Retrieve element from a specific form to validate
     var formElement = document.querySelector(options.form);
-    if (formElement) {
-        // When submit form with button
-        formElement.onsubmit = function (e) {
-            e.preventDefault();
-
-            var isFormValid = true;
-
-            // Loop through each rule and then validate
-            options.rules.forEach(function (rule) {
-                var inputElement = formElement.querySelector(rule.selector);
-                var isValid = validate(inputElement, rule);
-                if (!isValid) {
-                    isFormValid = false;
-                }
-            });
-
-            if (isFormValid) {
-                // When submit form with javascript
-                if (typeof options.onSubmit === 'function') {
-                    var enableInputs = formElement.querySelectorAll('[name]');
-                    var formValues = Array.from(enableInputs).reduce(function (values, input) {
-                        
-                        switch(input.type) {
-                            case 'radio':
-                                values[input.name] = formElement.querySelector('input[name="' + input.name + '"]:checked').value;
-                                break;
-                            case 'checkbox':
-                                if (!input.matches(':checked')) {
-                                    values[input.name] = '';
-                                    return values;
-                                }
-                                if (!Array.isArray(values[input.name])) {
-                                    values[input.name] = [];
-                                }
-                                values[input.name].push(input.value);
-                                break;
-                            case 'file':
-                                values[input.name] = input.files;
-                                break;
-                            default:
-                                values[input.name] = input.value;
-                        }
-
-                        return values;
-                    }, {});
-                    options.onSubmit(formValues);
-                }
-                // Submit form with default behaviour
-                else {
-                    formElement.submit();
-                }
-            }
-        }
+   
 
         // Loop through each rule and then process events: blur, input, ...
         options.rules.forEach(function (rule) {
